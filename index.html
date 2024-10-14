@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Web App</title>
+    <!-- Flutter initialization script -->
+    <script>
+        // The value below is injected by flutter build, do not touch.
+        const serviceWorkerVersion = "3069274424";
+    </script>
+    <script src="flutter.js" defer></script>
+    <base href="/">
+</head>
+<body>
+    <script>
+        window.addEventListener('load', function() {
+            // Initialize Flutter
+            _flutter.loader.loadEntrypoint({
+                serviceWorker: {
+                    serviceWorkerVersion: serviceWorkerVersion,
+                },
+                onEntrypointLoaded: function(engineInitializer) {
+                    engineInitializer.initializeEngine().then(function(appRunner) {
+                        appRunner.runApp();
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        console.log('Flutter web app is loading...');
+    </script>
+</body>
+</html>
